@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int correct_pin = 1234;     
+    int entered_pin;
+    int i;                      
+
+    for (i = 1; i <= 3; i++) {
+        printf("Enter your PIN: ");
+        scanf("%d", &entered_pin);
+        
+        if (entered_pin == correct_pin) {
+            printf("\n Access Granted!\n");
+            break; 
+            }
+        else if (i < 3) {
+            printf("Incorrect PIN. Try Again\n");
+        }
+        else {
+            printf("Incorrect PIN. This was your last attempt!\n\n");
+        }
+    }
+    if (i <= 3) {
+        printf("\n? Your card is active.\n");
+    }
+    else {
+        printf("\n Card Blocked!");
+    }
+    printf("Thank You!\n");
+    return 0;
+    }
+    
